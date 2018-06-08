@@ -31,7 +31,6 @@ app.get("/" , function(req,res){
   }
   return device;
   })(req.get('User-Agent'));
-
   if(modelID){
     (function(input_model){
 
@@ -48,13 +47,17 @@ app.get("/" , function(req,res){
         var find_result;
 
         if(!$("#review-body").find(".no-results").length){
-          var model = $($($("#review-body")).find("strong")[0]).html();
+        //  var model = $($($("#review-body")).find("strong")[0]).html();
 
-          var brRE = new RegExp("<br>" , "gm");
-
-          model = model.replace(brRE , " ");
-
-          find_result = $(model).text();
+          var models = $("#review-body").find("strong");
+          var totalKeys = Object.keys(models).length;
+          var modelArr = [];
+          for(let i = 0 ; i<totalKeys ; i++)
+            if($(models[i]).html()){
+              var tmp = new RegExp("<br>" , "gm");
+              modelArr.push($($(models[i]).html().replace(tmp , " ")).text());
+            }
+          find_result = modelArr[0];
         }
 
         var N = Math.floor((Math.random() * 20) + 1);

@@ -48,11 +48,15 @@ app.get("/" , function(req,res){
               const $ = cheerio.load(body);
               var modelResult;
               if(!$("#review-body").find(".no-results").length){
-                var model = $($($("#review-body")).find("strong")[0]).html();
-                var brRE = new RegExp("<br>" , "gm");
-                model = model.replace(brRE , " ");
-                modelResult = $(model).text();
-                resolve(modelResult);
+                var models = $("#review-body").find("strong");
+                var totalKeys = Object.keys(models).length;
+                var modelArr = [];
+                for(let i = 0 ; i<totalKeys ; i++)
+                  if($(models[i]).html()){
+                    var tmp = new RegExp("<br>" , "gm");
+                    modelArr.push($($(models[i]).html().replace(tmp , " ")).text());
+                  }
+                resolve(modelArr[0]);
             }
             else {
               reject(error);
